@@ -346,7 +346,8 @@ resource "google_cloud_run_v2_service" "n8n" {
         timeout_seconds       = 1
         period_seconds        = 1  # Reduced period for faster checks
         failure_threshold     = 45 # Fail after 1 minute (15s + 45s)
-        tcp_socket {
+        http_get {
+          path = "/healthz"
           port = var.cloud_run_container_port
         }
       }
