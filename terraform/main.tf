@@ -314,10 +314,6 @@ resource "google_cloud_run_v2_service" "n8n" {
         value = "60000"
       }
       env {
-        name  = "EXECUTIONS_PROCESS" # Added from GitHub issue solution
-        value = "main"
-      }
-      env {
         name  = "EXECUTIONS_MODE" # Added from GitHub issue solution
         value = "regular"
       }
